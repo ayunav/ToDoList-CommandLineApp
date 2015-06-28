@@ -43,6 +43,8 @@
 -(NSMutableArray*)items;
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName;
 -(void) addItemToList: (Item*) task;
+-(void) deleteItemFromList: (Item*) removeTask;
+-(BOOL) markItemInList: (Item*) markTask;
 -(void) printAllItemsInList;
 @end
 
@@ -66,13 +68,21 @@
     [_items addObject:task];
 }
 
--(void) printAllItemsInList {
+-(void) deleteItemFromList: (Item*) removeTask {
+    [_items removeObject:removeTask];
+}
+
+-(BOOL) markItemInList: (Item*) markTask {
+    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
+    
     for (int i = 0; i < [_items count]; i++) {
-        NSString *name = [[_items objectAtIndex:i] getName];
-        int priority = [[_items objectAtIndex:i] getPriority];
-        NSLog(@"%@, %d", name, priority);
+    
+    if (i == 1) {
+        [_items removeObject: markTask];
     }
 }
+}
+
 
 
 //[persons removeObjectAtIndex:index];
