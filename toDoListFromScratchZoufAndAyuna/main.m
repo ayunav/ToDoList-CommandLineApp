@@ -7,8 +7,6 @@
 //
 
 
-// added line again to test git branching
-
 #import <Foundation/Foundation.h>
 
 @class ListManager;
@@ -27,15 +25,15 @@
     NSString* _itemName;
     int _priority;
 }
--(void) createItem: (NSString*) name withPriority: (int) itemPriority {
-    _itemName = name;
-    _priority = itemPriority;
-}
 -(NSString*) getName {
     return _itemName;
 }
 -(int) getPriority {
     return _priority;
+}
+-(void) createItem: (NSString*) name withPriority: (int) itemPriority {
+    _itemName = name;
+    _priority = itemPriority;
 }
 @end
 
@@ -46,9 +44,9 @@
 -(NSMutableArray*)items;
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName;
 -(void) addItemToList: (Item*) task;
--(void) deleteItemFromList: (Item*) removeTask;
--(BOOL) markItemDone: (Item*) markTaskDone;
-//-(void) printAllItemsInList;
+-(void) printAllItemsInList;
+-(void) deleteItemFromList: (Item*) task;
+//-(BOOL) markItemDone: (Item*) markTaskDone;
 @end
 
 //************************************** IMPLEM LIST ********
@@ -71,23 +69,27 @@
     [_items addObject:task];
 }
 
--(void) deleteItemFromList: (Item*) removeTask {
-    [_items removeObject:removeTask];
+-(void) deleteItemFromList: (Item*) task {
+    [_items removeObject:task];
 }
 
--(BOOL) markItemDone: (Item*) markTaskDone {
-    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
-    
-    for (int i = 0; i < [_items count]; i++) {
-        if (i == 1) {
-            [_items removeObject: markTaskDone];
-        }
-    }
-    }
+//-(BOOL) markItemDone: (Item*) markTaskDone {
+//    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
+//    
+//    for (int i = 0; i < [_items count]; i++) {
+//        if (i == 1) {
+//            [_items removeObject: markTaskDone];
+//        }
+//    }
+//    }
 
-//-(void) printAllItemsInList {
-//    ;
-//}
+-(void) printAllItemsInList {
+    for (int i = 0; i < [_items count]; i++) {
+        NSString *name = [[_items objectAtIndex:i] getName];
+        int priority = [[_items objectAtIndex:i] getPriority];
+        NSLog(@"%@, %d", name, priority);
+    }
+}
 
 @end
 
@@ -97,6 +99,7 @@
 -(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
 -(void)printLists;
+-(void) deleteListFromListManager: (List*) list;
 @end
 
 //************************************** IMPLEM LIST MANAGER ********
@@ -118,6 +121,10 @@
         NSLog(@"%@", listName);
     }
 }
+-(void) deleteListFromListManager: (List*) list {
+    [_lists removeObject:list];
+}
+
 @end
 
 
@@ -135,7 +142,7 @@ int main(int argc, const char * argv[]) {
         [groceryList setListNameAndInitializeItemsArray:@"Grocery List"];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
-        //[groceryList printAllItemsInList];
+        [groceryList printAllItemsInList];
         
         ListManager *oneListSoFar = [[ListManager alloc]init];
         [oneListSoFar getLists];
