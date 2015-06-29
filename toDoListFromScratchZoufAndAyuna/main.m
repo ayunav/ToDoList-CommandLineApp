@@ -39,13 +39,13 @@
 
 //************************************** INTERFACE LIST ********
 @interface List : NSObject
--(NSString*)listName;
+-(NSString*)getListName;
 -(NSMutableArray*)items;
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName;
 -(void) addItemToList: (Item*) task;
 -(void) deleteItemFromList: (Item*) removeTask;
--(BOOL) markItemInList: (Item*) markTask;
--(void) printAllItemsInList;
+-(BOOL) markItemDone: (Item*) markTaskDone;
+//-(void) printAllItemsInList;
 @end
 
 //************************************** IMPLEM LIST ********
@@ -72,27 +72,26 @@
     [_items removeObject:removeTask];
 }
 
--(BOOL) markItemInList: (Item*) markTask {
+-(BOOL) markItemDone: (Item*) markTaskDone {
     NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
     
     for (int i = 0; i < [_items count]; i++) {
-    
-    if (i == 1) {
-        [_items removeObject: markTask];
+        if (i == 1) {
+            [_items removeObject: markTaskDone];
+        }
     }
-}
-}
+    }
 
-
-
-//[persons removeObjectAtIndex:index];
+//-(void) printAllItemsInList {
+//    ;
+//}
 
 @end
 
 
-//************************************** INTERFACE LIST MANAGER ********
+//************************ INTERFACE LIST MANAGER ********
 @interface ListManager : NSObject
--(NSMutableArray*) lists;
+-(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
 -(void)printLists;
 @end
@@ -119,9 +118,10 @@
 @end
 
 
-
+// ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
         Item *firstTask = [[Item alloc]init];
         [firstTask createItem:@"Buy bananas" withPriority:1];
         
@@ -132,7 +132,7 @@ int main(int argc, const char * argv[]) {
         [groceryList setListNameAndInitializeItemsArray:@"Grocery List"];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
-        [groceryList printAllItemsInList];
+        //[groceryList printAllItemsInList];
         
         ListManager *oneListSoFar = [[ListManager alloc]init];
         [oneListSoFar getLists];
