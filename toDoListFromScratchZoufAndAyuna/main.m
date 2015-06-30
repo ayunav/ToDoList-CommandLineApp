@@ -46,7 +46,7 @@
 
 //************************************** INTERFACE LIST ********
 @interface List : NSObject
--(NSString*)listName;
+-(NSString*)getListName;
 -(NSMutableArray*)items;
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName;
 -(void) addItemToList: (Item*) task;
@@ -57,6 +57,9 @@
 -(NSString*)markedCompletedItems;
 -(BOOL) markItemInList: (Item*) markTask;
 -(void) printAllItemsInList;
+=======
+-(BOOL) markItemDone: (Item*) markTaskDone;
+//-(void) printAllItemsInList;
 @end
 
 //************************************** IMPLEM LIST ********
@@ -134,7 +137,20 @@
 }
 
 
+=======
+-(BOOL) markItemDone: (Item*) markTaskDone {
+    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
+    
+    for (int i = 0; i < [_items count]; i++) {
+        if (i == 1) {
+            [_items removeObject: markTaskDone];
+        }
+    }
+    }
 
+//-(void) printAllItemsInList {
+//    ;
+//}
 -(BOOL) markItemInList: (Item*) markTask {
     NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
     int j;
@@ -152,9 +168,9 @@
 @end
 
 
-//************************************** INTERFACE LIST MANAGER ********
+//************************ INTERFACE LIST MANAGER ********
 @interface ListManager : NSObject
--(NSMutableArray*) lists;
+-(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
 -(void) removeListFromListManager: (List*) removeList;
 -(void)printLists;
@@ -192,8 +208,12 @@
 
 
 
+=======
+// ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
+>>>>>>> 3ff7818ac1997124abe87e6bf03272ad537c54a6
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
         Item *firstTask = [[Item alloc]init];
         [firstTask createItem:@"Buy bananas" withPriority:1];
         
@@ -204,7 +224,7 @@ int main(int argc, const char * argv[]) {
         [groceryList setListNameAndInitializeItemsArray:@"Grocery List"];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
-        [groceryList printAllItemsInList];
+        //[groceryList printAllItemsInList];
         
         ListManager *oneListSoFar = [[ListManager alloc]init];
         [oneListSoFar getLists];
