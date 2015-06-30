@@ -51,20 +51,22 @@
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName;
 -(void) addItemToList: (Item*) task;
 -(void)editItemName:(NSString*) newItemName;
+-(NSString*)getItemNames;
 -(NSString*) getNewItemName;
 -(void) deleteItemFromList: (Item*) removeTask;
 -(void)editListName:(NSString*) newListName;
 -(NSString*)markedCompletedItems;
 -(BOOL) markItemInList: (Item*) markTask;
 -(void) printAllItemsInList;
-=======
 -(BOOL) markItemDone: (Item*) markTaskDone;
-//-(void) printAllItemsInList;
+-(NSString *)parse;
+-(void) printAllItemsInList;
 @end
 
 //************************************** IMPLEM LIST ********
 @implementation List {
     NSString* _listName;
+    NSString* _itemNames;
     NSMutableArray* _items;
     BOOL markItemInList;
     NSString* markedCompletedItems;
@@ -75,6 +77,10 @@
 }
 - (NSMutableArray*)items {
     return _items;
+}
+
+-(NSString*)getItemNames {
+    return _itemNames;
 }
 
 -(void)setListNameAndInitializeItemsArray: (NSString*) listName {
@@ -137,20 +143,13 @@
 }
 
 
-=======
--(BOOL) markItemDone: (Item*) markTaskDone {
-    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
-    
+-(void)printAllItemsInList {
     for (int i = 0; i < [_items count]; i++) {
-        if (i == 1) {
-            [_items removeObject: markTaskDone];
-        }
+        NSString *itemNames = [[_items objectAtIndex:i] getItemNames];
+        NSLog(@"%@", itemNames);
     }
-    }
+}
 
-//-(void) printAllItemsInList {
-//    ;
-//}
 -(BOOL) markItemInList: (Item*) markTask {
     NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
     int j;
@@ -174,7 +173,6 @@
 -(void) addListToListManager: (List*) list;
 -(void) removeListFromListManager: (List*) removeList;
 -(void)printLists;
--(NSString *)parse;
 @end
 
 //************************************** IMPLEM LIST MANAGER ********
@@ -208,9 +206,7 @@
 
 
 
-=======
 // ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
->>>>>>> 3ff7818ac1997124abe87e6bf03272ad537c54a6
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
@@ -220,36 +216,58 @@ int main(int argc, const char * argv[]) {
         Item *secondTask = [[Item alloc]init];
         [secondTask createItem:@"Buy coffee and tea" withPriority:2];
         
-        List *groceryList = [[List alloc]init];
-        [groceryList setListNameAndInitializeItemsArray:@"Grocery List"];
-        [groceryList addItemToList:firstTask];
-        [groceryList addItemToList:secondTask];
+        List *newList = [[List alloc]init];
+        [newList setListNameAndInitializeItemsArray:@"Grocery List"];
+        [newList addItemToList:firstTask];
+        [newList addItemToList:secondTask];
         //[groceryList printAllItemsInList];
         
-        ListManager *oneListSoFar = [[ListManager alloc]init];
-        [oneListSoFar getLists];
-        [oneListSoFar addListToListManager: groceryList];
-        [oneListSoFar printLists];
+        ListManager *newListInListManager = [[ListManager alloc]init];
+        [newListInListManager getLists];
+        [newListInListManager addListToListManager: newList];
+        [newListInListManager printLists];
         
         
         int i;
         while(1) {
-            NSLog(@"Please what you would like to do to the list. 1)remove list 2)add list 3)rename list 4)pick a list 5)quit");
+            NSLog(@"Please what you would like to do to the list. 1)pick a list 2)add list 3)rename list 4)remove list 5)list items 6)add item 7)remove item 8)mark item completed  9)quit");
             
             scanf("%d", &i);
             
             if (i == 1) {
-                NSLog(@"You chose to list your active items: \n");
-                [oneListSoFar removeListFromListManager];
+                NSLog(@"Pick a list: \n");
+                [newListInListManager printLists];
+                
             } else if (i == 2) {
-                NSLog(@"You chose to add an item to the list. Please enter a description: \n");
-                [oneListSoFar addListToListManager];
+                NSLog(@"You chose to add list. Please enter a description: \n");
+                [newListInListManager addListToListManager:newList];
+                
             } else if (i == 3) {
-                NSLog(@"You chose to delete an item from the list \n");
-                [self renameList];
+               NSLog(@"You chose to rename list. Please enter a description: \n");
+                [newList editListName:<#(NSString *)#>];
+                
             } else if (i == 4){
+                  NSLog(@"You chose to remove list \n");
+                 [newListInListManager removeListFromListManager:newList];
                 
             } else if (i == 5) {
+                  NSLog(@"You chose to list items. \n");
+                 [newList printAllItemsInList];
+                
+            } else if (i == 6) {
+                NSLog(@"You chose to add an item to the list. Please enter a description: \n");
+                 [newList addItemToList:<#(Item *)#>];
+                
+            } else if (i == 7) {
+                NSLog(@"You chose to delete an item from the list \n");
+                 [newList deleteItemFromList:<#(Item *)#>];
+                
+            } else if (i == 8) {
+                 NSLog(@"You chose to mark an item completed \n");
+                 [newList markItemInList:<#(Item *)#>];
+                
+            } else if (i == 9) {
+                  NSLog(@"Adios amigo! See you soon \n");
                 
                 
             } else {
@@ -260,45 +278,6 @@ int main(int argc, const char * argv[]) {
         
         
         
-        
-        //************************************** SAMPLE USER INPUT ********
-        //        int i;
-        //        scanf("%d", &i);
-        //
-        //        //    for (int j = 0; j < 5; j++) {
-        //
-        //        if (i == 1) {
-        //            NSLog(@"You chose to list your active items: \n");
-        //            [self showList];
-        //        } else if (i == 2) {
-        //            NSLog(@"You chose to add an item to the list. Please enter a description: \n");
-        //            [self addItem];
-        //        } else if (i == 3) {
-        //            NSLog(@"You chose to delete an item from the list \n");
-        //            [self deleteItem];
-        //        } else if (i == 4) {
-        //            NSLog(@"You chose to mark an item as completed: \n");
-        //            [self markAsCompleted];
-        //        } else if (i == 5 ) {
-        //            NSLog(@"You chose to list completed items: \n");
-        //            [self _completedList];
-        //        } else {
-        //            NSLog(@"Invalid Entry");
-        //        }
-        //
-        //    }
-        //        Please enter a description: swim
-        //
-        //        What would you like to do?
-        //            l - list items
-        //            a - add item
-        //            r - remove item
-        //            d - mark item done
-        //            c - list completed item
-        //            
-        //            > l
-        
-        
     }
     return 0;
-
+}

@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "toDoListFromScratchZoufAndAyuna/main.m"
-            timestampString = "457364687.757284"
+            timestampString = "457390589.659451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-getNewItemName"
-            landmarkType = "4">
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "main()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
