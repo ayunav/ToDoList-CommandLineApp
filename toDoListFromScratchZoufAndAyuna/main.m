@@ -10,7 +10,6 @@
 #import "Item.h"
 #import "List.h"
 #import "ListManager.h"
-#import "ListManager.m"
 
 @class ListManager;
 @class List;
@@ -91,10 +90,13 @@ int main(int argc, const char * argv[]) {
         if (i == 1) {
             [oneListSoFar printLists];
         }
-        
+        // if add new to do list - don't know how to right the whole thing
+        // if delete list -> how pick a list at index? write it in the method in implementation
+//        if (i == 3) {
+//            [oneListSoFar deleteListFromListManager:<#(List *)#>];
+//        }
+//        
 
-        
-        
         
 //        NSArray *homeMenuListOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks\n", @"2 - Add new task\n", @"3 - Delete task\n", @"4 - Mark task done\n", @"5 - Edit task\n", @"6 - List all active tasks\n", @"7 - List completed tasks\n", nil];
 //        NSLog(@"%@", homeMenuListOptions);

@@ -28,9 +28,11 @@
     [_lists addObject:list];
     //scanf for user input string name for the new to-do list
     //[list setListName: user input string for the new to do list name];
+    //should list options for that list - home menu list options (display all tasks, add task, etc.
 }
 
 -(void) deleteListFromListManager: (List*) list {
+    //printlists method - display all lists
     NSLog(@"Enter a list number to delete it");
     int j;
     scanf("%d", &j);
