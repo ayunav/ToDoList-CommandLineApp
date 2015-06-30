@@ -10,6 +10,7 @@
 #import "Item.h"
 #import "List.h"
 #import "ListManager.h"
+#import "ListManager.m"
 
 @class ListManager;
 @class List;
@@ -31,7 +32,6 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
         Item *firstTask = [[Item alloc]init];
         [firstTask setItemName:@"Buy bananas"];
         [firstTask setItemPriority:1];
@@ -42,24 +42,62 @@ int main(int argc, const char * argv[]) {
         
         List *groceryList = [[List alloc]init];
         [groceryList setListName:@"Grocery List"];
-        [groceryList itemsInList]; 
+        [groceryList itemsInList];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
-        [groceryList printAllItemsInList];
+        //[groceryList printAllItemsInList];
         //[groceryList editItemName:secondTask];
+        
+        
+        Item *finishToDoListAppProject = [[Item alloc] init];
+        [finishToDoListAppProject setItemName:@"Finish to-do list app project"];
+        [finishToDoListAppProject setItemPriority:1];
+        
+        Item *learnGitBranching = [[Item alloc] init];
+        [learnGitBranching setItemName:@"Learn Git branching"];
+        [learnGitBranching setItemPriority:2];
+        
+        Item *readBook = [[Item alloc] init];
+        [readBook setItemName:@"Read Objective-C programming: The big nerd ranch guide book"];
+        [readBook setItemPriority:3];
+        
+        List *homeworkToDoList = [[List alloc] init];
+        [homeworkToDoList itemsInList];
+        [homeworkToDoList setListName:@"Homework"];
+        [homeworkToDoList addItemToList:finishToDoListAppProject];
+        [homeworkToDoList addItemToList:learnGitBranching];
+        [homeworkToDoList addItemToList:readBook];
+        //[homeworkToDoList printAllItemsInList];
         
         ListManager *oneListSoFar = [[ListManager alloc]init];
         [oneListSoFar getLists];
         [oneListSoFar addListToListManager: groceryList];
-        [oneListSoFar printLists];
+        [oneListSoFar addListToListManager:homeworkToDoList];
+        
         
         //[groceryList deleteItemFromList:firstTask];
         //[groceryList printAllItemsInList];
         //[groceryList markItemDone:secondTask];
         //[groceryList printAllItemsInList];
-    
-//        NSArray *homeMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list\n", @"3 - Delete a to-do list\n", @"4 - Display all tasks\n", @"5 - Add new task\n", @"6 - Delete task\n", @"7 - Mark task done\n", @"8 - Edit task\n", @"9 - List all active tasks\n", @"10 - List completed tasks\n", nil];
-//        NSLog(@"%@", homeMenuOptions);
+
+        
+        NSLog(@"Welcome to your to-do list app! Let's get you started:\n");
+        //print options menu for list options menu
+        NSArray *homeMenuListManagerOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"Enter a number to pick your option:", nil];
+        NSLog(@"%@", homeMenuListManagerOptions);
+        int j;
+        scanf("%d", &j);
+        int i;
+        if (i == 1) {
+            [oneListSoFar printLists];
+        }
+        
+
+        
+        
+        
+//        NSArray *homeMenuListOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks\n", @"2 - Add new task\n", @"3 - Delete task\n", @"4 - Mark task done\n", @"5 - Edit task\n", @"6 - List all active tasks\n", @"7 - List completed tasks\n", nil];
+//        NSLog(@"%@", homeMenuListOptions);
 
         
         

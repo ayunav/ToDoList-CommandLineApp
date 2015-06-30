@@ -20,9 +20,16 @@
     }
     return _lists;
 }
+
 -(void) addListToListManager: (List*) list {
+    NSLog(@"Enter a name for your new to-do list");
+    //List *somethingList = [[List alloc] init];
+    //[somethingList itemsInList]; - initializes items array in the new todo list
     [_lists addObject:list];
+    //scanf for user input string name for the new to-do list
+    //[list setListName: user input string for the new to do list name];
 }
+
 -(void) deleteListFromListManager: (List*) list {
     NSLog(@"Enter a list number to delete it");
     int j;
@@ -38,6 +45,7 @@
         NSString *listName = [[_lists objectAtIndex:i] listName];
         NSLog(@"%@", listName);
     }
+    NSLog(@"Enter a number to pick your to-do list");
 }
 @end
 
