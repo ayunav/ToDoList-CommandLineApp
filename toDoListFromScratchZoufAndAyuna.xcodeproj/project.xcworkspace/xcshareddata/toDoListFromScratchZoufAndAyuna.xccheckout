@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1D2CD5CA-E1A4-408D-8FA0-BC569377E91C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>toDoListFromScratchZoufAndAyuna</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FD2D90A2E68495D92D1F30791F60CB378BC9B945</key>
+		<string>https://github.com/ayunav/toDoListFromScratchZoufAndAyuna.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>toDoListFromScratchZoufAndAyuna.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FD2D90A2E68495D92D1F30791F60CB378BC9B945</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ayunav/toDoListFromScratchZoufAndAyuna.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FD2D90A2E68495D92D1F30791F60CB378BC9B945</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD2D90A2E68495D92D1F30791F60CB378BC9B945</string>
+			<key>IDESourceControlWCCName</key>
+			<string>toDoListFromScratchZoufAndAyuna</string>
+		</dict>
+	</array>
+</dict>
+</plist>

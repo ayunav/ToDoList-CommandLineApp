@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		29DC01F61B40583D00C3F5B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC01F51B40583D00C3F5B7 /* main.m */; };
+		29DC01FE1B425CBF00C3F5B7 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC01FD1B425CBF00C3F5B7 /* Item.m */; };
+		29DC02011B425D1F00C3F5B7 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC02001B425D1F00C3F5B7 /* List.m */; };
+		29DC02041B425D8700C3F5B7 /* ListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC02031B425D8700C3F5B7 /* ListManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		29DC01F21B40583D00C3F5B7 /* toDoListFromScratchZoufAndAyuna */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = toDoListFromScratchZoufAndAyuna; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DC01F51B40583D00C3F5B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29DC01FC1B425CBF00C3F5B7 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		29DC01FD1B425CBF00C3F5B7 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		29DC01FF1B425D1F00C3F5B7 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		29DC02001B425D1F00C3F5B7 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		29DC02021B425D8700C3F5B7 /* ListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListManager.h; sourceTree = "<group>"; };
+		29DC02031B425D8700C3F5B7 /* ListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				29DC01F51B40583D00C3F5B7 /* main.m */,
+				29DC01FC1B425CBF00C3F5B7 /* Item.h */,
+				29DC01FD1B425CBF00C3F5B7 /* Item.m */,
+				29DC01FF1B425D1F00C3F5B7 /* List.h */,
+				29DC02001B425D1F00C3F5B7 /* List.m */,
+				29DC02021B425D8700C3F5B7 /* ListManager.h */,
+				29DC02031B425D8700C3F5B7 /* ListManager.m */,
 			);
 			path = toDoListFromScratchZoufAndAyuna;
 			sourceTree = "<group>";
@@ -118,7 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29DC02011B425D1F00C3F5B7 /* List.m in Sources */,
+				29DC01FE1B425CBF00C3F5B7 /* Item.m in Sources */,
 				29DC01F61B40583D00C3F5B7 /* main.m in Sources */,
+				29DC02041B425D8700C3F5B7 /* ListManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +253,7 @@
 				29DC01FB1B40583D00C3F5B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
