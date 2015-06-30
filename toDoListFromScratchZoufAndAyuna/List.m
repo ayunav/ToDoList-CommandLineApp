@@ -61,5 +61,27 @@
     }
 }
 
+//-(void) editItemName {
+// first version of this code - doesn't work
+//    NSLog(@"Enter task description");
+//    char newItemName[256];
+//    fgets(newItemName, 256, stdin);
+//    NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
+
+//2nd version:
+//    //if scanf user input = edit task {
+//    int j;
+//    scanf("%d", &j);
+//    for (int i = 0; i < [_itemsInList count]; i++) {
+//        if (j == i) {
+//            NSString *itemName = [[_itemsInList objectAtIndex:j-1] itemName];
+//            NSLog(@"Enter task description");
+//            char newItemName[256];
+//            fgets(newItemName, 256, stdin);
+//            NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
+//            itemName = editedItemName;
+//        }
+//    }
+//}
 @end
 

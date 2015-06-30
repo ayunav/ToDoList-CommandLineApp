@@ -46,6 +46,7 @@ int main(int argc, const char * argv[]) {
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
         [groceryList printAllItemsInList];
+        //[groceryList editItemName:secondTask];
         
         ListManager *oneListSoFar = [[ListManager alloc]init];
         [oneListSoFar getLists];
@@ -57,8 +58,8 @@ int main(int argc, const char * argv[]) {
         //[groceryList markItemDone:secondTask];
         //[groceryList printAllItemsInList];
     
-        NSArray *homeMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list\n", @"3 - Delete a to-do list\n", @"4 - Display all tasks\n", @"5 - Add new task\n", @"6 - Delete task\n", @"7 - Mark task done\n", @"8 - Edit task\n", @"9 - List all active tasks\n", @"10 - List completed tasks\n", nil];
-        NSLog(@"%@", homeMenuOptions);
+//        NSArray *homeMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list\n", @"3 - Delete a to-do list\n", @"4 - Display all tasks\n", @"5 - Add new task\n", @"6 - Delete task\n", @"7 - Mark task done\n", @"8 - Edit task\n", @"9 - List all active tasks\n", @"10 - List completed tasks\n", nil];
+//        NSLog(@"%@", homeMenuOptions);
 
         
         
