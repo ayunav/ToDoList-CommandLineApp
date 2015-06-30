@@ -15,79 +15,94 @@
 
 //************************************** INTERFACE ITEM ********
 @interface Item : NSObject
--(void) createItem: (NSString*) name withPriority: (int) itemPriority;
--(NSString*) getName;
--(int) getPriority;
+-(void) setItemName: (NSString*) itemName;
+-(void) setItemPriority: (int) itemPriority;
+-(NSString*) itemName;
+-(int) itemPriority;
 @end
 
 //************************************** IMPLEM ITEM ********
 @implementation Item {
     NSString* _itemName;
-    int _priority;
+    int _itemPriority;
 }
--(NSString*) getName {
+-(void) setItemName: (NSString*) itemName {
+    _itemName = itemName;
+}
+-(NSString*) itemName {
     return _itemName;
 }
--(int) getPriority {
-    return _priority;
+-(void) setItemPriority: (int) itemPriority {
+    _itemPriority = itemPriority;
 }
--(void) createItem: (NSString*) name withPriority: (int) itemPriority {
-    _itemName = name;
-    _priority = itemPriority;
+-(int) itemPriority {
+    return _itemPriority;
 }
 @end
 
 
 //************************************** INTERFACE LIST ********
 @interface List : NSObject
--(NSString*)getListName;
--(NSMutableArray*)items;
--(void)setListNameAndInitializeItemsArray: (NSString*) listName;
--(void) addItemToList: (Item*) task;
+-(NSString *) listName;
+-(NSMutableArray *) itemsInList;
+-(void)setListName: (NSString *) listName;
+-(void) addItemToList: (Item *) task;
+-(void) deleteItemFromList: (Item *) task;
 -(void) printAllItemsInList;
--(void) deleteItemFromList: (Item*) task;
-//-(BOOL) markItemDone: (Item*) markTaskDone;
+-(void) markItemDone: (Item *) task;
 @end
 
 //************************************** IMPLEM LIST ********
 @implementation List {
     NSString* _listName;
-    NSMutableArray* _items;
+    NSMutableArray* _itemsInList;
 }
--(NSString*) getListName {
+
+-(void)setListName:(NSString *)listName {
+    _listName = listName;
+}
+-(NSString*) listName {
     return _listName;
 }
-- (NSMutableArray*)items {
-    return _items;
-}
--(void)setListNameAndInitializeItemsArray: (NSString*) listName {
-    _listName = listName;
-    _items = [[NSMutableArray alloc] init];
-}
+-(NSMutableArray*)itemsInList {
+    if (_itemsInList == nil) {
+        _itemsInList = [[NSMutableArray alloc] init];
+        }
+        return _itemsInList;
+    }
 
 -(void) addItemToList: (Item*) task {
-    [_items addObject:task];
+    [_itemsInList addObject:task];
 }
-
 -(void) deleteItemFromList: (Item*) task {
-    [_items removeObject:task];
+    NSLog(@"Enter an item number to delete it");
+    int j;
+    scanf("%d", &j);
+    for (int i = 0; i < [_itemsInList count]; i++) {
+        if (i == j) {
+            [_itemsInList removeObjectAtIndex:j-1];
+        }
+    }
 }
-
-//-(BOOL) markItemDone: (Item*) markTaskDone {
-//    NSLog(@"Would you like to mark an item completed? 1) Yes 2) No");
-//    
-//    for (int i = 0; i < [_items count]; i++) {
-//        if (i == 1) {
-//            [_items removeObject: markTaskDone];
-//        }
-//    }
-//    }
 
 -(void) printAllItemsInList {
-    for (int i = 0; i < [_items count]; i++) {
-        NSString *name = [[_items objectAtIndex:i] getName];
-        int priority = [[_items objectAtIndex:i] getPriority];
-        NSLog(@"%@, %d", name, priority);
+    for (int i = 0; i < [_itemsInList count]; i++) {
+        NSString *itemName = [[_itemsInList objectAtIndex:i] itemName];
+        int itemPriority = [[_itemsInList objectAtIndex:i] itemPriority];
+        NSLog(@"%@, %d", itemName, itemPriority);
+    }
+}
+
+-(void) markItemDone: (Item *) task {
+    NSLog(@"What item do you want to mark as completed?");
+    int j;
+    scanf("%d", &j);
+    for (int i = 0; i < [_itemsInList count]; i++) {
+        if (i == j) {
+            NSString *task = [[_itemsInList objectAtIndex:j-1] itemName];
+            NSString *printTaskAsCompleted = [NSString stringWithFormat:@"✔︎ %@", task];
+            NSLog(@"%@", printTaskAsCompleted);
+        }
     }
 }
 
@@ -98,8 +113,8 @@
 @interface ListManager : NSObject
 -(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
--(void)printLists;
 -(void) deleteListFromListManager: (List*) list;
+-(void)printLists;
 @end
 
 //************************************** IMPLEM LIST MANAGER ********
@@ -115,31 +130,38 @@
 -(void) addListToListManager: (List*) list {
     [_lists addObject:list];
 }
+-(void) deleteListFromListManager: (List*) list {
+    NSLog(@"Enter a list number to delete it");
+    int j;
+    scanf("%d", &j);
+    for (int i = 0; i < [_lists count]; i++) {
+        if (i == j) {
+            [_lists removeObjectAtIndex:j-1];
+        }
+    }
+}
 -(void)printLists {
     for (int i = 0; i < [_lists count]; i++) {
-        NSString *listName = [[_lists objectAtIndex:i] getListName];
+        NSString *listName = [[_lists objectAtIndex:i] listName];
         NSLog(@"%@", listName);
     }
 }
--(void) deleteListFromListManager: (List*) list {
-    [_lists removeObject:list];
-}
-
 @end
-
 
 // ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         Item *firstTask = [[Item alloc]init];
-        [firstTask createItem:@"Buy bananas" withPriority:1];
+        [firstTask setItemName:@"Buy bananas"];
+        [firstTask setItemPriority:1];
         
         Item *secondTask = [[Item alloc]init];
-        [secondTask createItem:@"Buy coffee and tea" withPriority:2];
+        [secondTask setItemName:@"Buy coffee and tea"];
+        [secondTask setItemPriority:2];
         
         List *groceryList = [[List alloc]init];
-        [groceryList setListNameAndInitializeItemsArray:@"Grocery List"];
+        [groceryList setListName:@"Grocery List"];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
         [groceryList printAllItemsInList];
