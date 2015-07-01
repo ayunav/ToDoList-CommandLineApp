@@ -26,11 +26,11 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Item *firstTask = [[Item alloc]init];
-        [firstTask setItemName:@"Buy bananas"];
+        [firstTask setItem:@"Buy bananas"];
         [firstTask setItemPriority:1];
         
         Item *secondTask = [[Item alloc]init];
-        [secondTask setItemName:@"Buy coffee and tea"];
+        [secondTask setItem:@"Buy coffee and tea"];
         [secondTask setItemPriority:2];
         
         List *groceryList = [[List alloc]init];
@@ -43,15 +43,15 @@ int main(int argc, const char * argv[]) {
         
         
         Item *finishToDoListAppProject = [[Item alloc] init];
-        [finishToDoListAppProject setItemName:@"Finish to-do list app project"];
+        [finishToDoListAppProject setItem:@"Finish to-do list app project"];
         [finishToDoListAppProject setItemPriority:1];
         
         Item *learnGitBranching = [[Item alloc] init];
-        [learnGitBranching setItemName:@"Learn Git branching"];
+        [learnGitBranching setItem:@"Learn Git branching"];
         [learnGitBranching setItemPriority:2];
         
         Item *readBook = [[Item alloc] init];
-        [readBook setItemName:@"Read Objective-C programming: The big nerd ranch guide book"];
+        [readBook setItem:@"Read Objective-C programming: The big nerd ranch guide book"];
         [readBook setItemPriority:3];
         
         List *homeworkToDoList = [[List alloc] init];
@@ -67,6 +67,11 @@ int main(int argc, const char * argv[]) {
         [allLists addListToListManager: groceryList];
         [allLists addListToListManager:homeworkToDoList];
         
+        NSLog(@"Welcome to your to-do list app! Let's get you started:\n");
+        [allLists listManagerMenuOptions]; //prints List Manager options menu
+
+        
+        
         
         //[groceryList deleteItemFromList:firstTask];
         //[groceryList printAllItemsInList];
@@ -74,9 +79,7 @@ int main(int argc, const char * argv[]) {
         //[groceryList printAllItemsInList];
 
         
-        NSLog(@"Welcome to your to-do list app! Let's get you started:\n");
-        //print options menu for list options menu
-        [allLists listManagerMenuOptions];
+        
         
         [groceryList listOptions]; 
         

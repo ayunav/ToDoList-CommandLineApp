@@ -84,6 +84,17 @@
 //    }
 //}
 
+-(void) addListDescription {
+    NSLog(@"Enter list description: ");
+    // fgets method allows user to input more than one word ie: "finish project"
+    char listDescriptionInput[256];
+    fgets(listDescriptionInput, 256, stdin);
+    //  NSLog(@"item added: %s", name); // we test our work above here
+    NSString *listDescription = [NSString stringWithUTF8String:listDescriptionInput]; //stringWithUTF8String converts char to string
+    //    NSLog(@"string test: %@", item1);
+    [self setListName:listDescription];
+}
+
 -(void) listOptions {
     //this has to be inside a while loop, don't know how to write it yet
     NSArray *listOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks", @"2 - Add new task", @"3 - Edit task", @"4 - Delete task", @"5 - Mark task done", @"6 - List all active tasks", @"7 - List completed tasks", @"0 - Quit",  nil];

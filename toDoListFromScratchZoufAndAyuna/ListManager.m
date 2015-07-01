@@ -22,10 +22,10 @@
 }
 
 -(void) addListToListManager: (List*) list {
-    //NSLog(@"Enter a name for your new to-do list"); commenting it out for now, but it will be in the loop method later 
-    //List *somethingList = [[List alloc] init];
-    //[somethingList itemsInList]; - initializes items array in the new todo list
-    [_lists addObject:list];
+    NSLog(@"Enter a name for your new to-do list"); commenting it out for now, but it will be in the loop method later
+    List *somethingList = [[List alloc] init];
+    // doesn't work [somethingList itemsInList]; - initializes items array in the new todo list
+    //[_lists addObject:];
     //scanf for user input string name for the new to-do list
     //[list setListName: user input string for the new to do list name];
     //should list options for that list - home menu list options (display all tasks, add task, etc.
@@ -50,25 +50,29 @@
     NSLog(@"Enter a number to pick your to-do list");
 }
 
--(void) listManagerMenuOptions {
-    //this has to be inside a while loop, don't know how to write it yet
-    NSArray *listManagerMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"0 - Quit", @"Enter a number to pick your option:", nil];
-    NSLog(@"%@", listManagerMenuOptions);
-    int i;
-    scanf("%d", &i);
-    if (i == 1) {
-        //[_lists printLists];
-    }
-    // if add new to do list - don't know how to write the whole thing yet
-    // if delete list -> how pick a list at index? write it in the method in implementation
-    //        if (i == 3) {
-    //            [oneListSoFar deleteListFromListManager:<#(List *)#>];
-    //        }
-    if (i == 0) {
-        NSLog(@"It was good to see you! Bye!");
-    }
-    else {
-        NSLog(@"Bummer! Try again?");
+-(void) listManagerMenuOptions { //this has to be inside a while loop, don't know how to write it yet
+    int userInputInteger;
+    while (true) { // ?
+        NSArray *listManagerMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"0 - Quit", @"Enter a number to pick your option:", nil];
+        NSLog(@"%@", listManagerMenuOptions);
+        scanf("%d", &userInputInteger);
+        fpurge(stdin);
+        if (userInputInteger == 1) {
+            // print lists
+        }
+        if (userInputInteger == 2) {
+            ListManager *newList = [[ListManager alloc]init];
+            //method doesn't work [newList addListDescription]; has something to do with the while loop
+            //method doesn't work [newList _itemsInList]; has something to do with the while loop
+            //method doesn't work [newList listName]; has something to do with the while loop
+        }
+        if (userInputInteger == 0) {
+            NSLog(@"It was good to see you! Bye!");
+            break; //doesn't break out of the while loop here
+        }
+        else {
+            NSLog(@"Bummer! Try again?");
+        }
     }
 }
 @end
