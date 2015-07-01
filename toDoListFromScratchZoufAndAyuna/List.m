@@ -85,6 +85,7 @@
 //}
 
 -(void) listOptions {
+    //this has to be inside a while loop, don't know how to write it yet
     NSArray *listOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks", @"2 - Add new task", @"3 - Edit task", @"4 - Delete task", @"5 - Mark task done", @"6 - List all active tasks", @"7 - List completed tasks", @"0 - Quit",  nil];
     NSLog(@"%@", listOptions);
     int i;
