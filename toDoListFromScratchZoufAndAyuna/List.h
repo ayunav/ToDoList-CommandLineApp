@@ -24,5 +24,5 @@
 -(void) printAllItemsInList;
 -(void) markItemDone: (Item *) task;
 //-(void) editItemName;
-
+-(void) listOptions;
 @end

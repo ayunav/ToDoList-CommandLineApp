@@ -61,6 +61,40 @@
     }
 }
 
+-(void) listOptions {
+    NSArray *listOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks", @"2 - Add new task", @"3 - Edit task", @"4 - Delete task", @"5 - Mark task done", @"6 - List all active tasks", @"7 - List completed tasks", @"0 - Quit",  nil];
+    NSLog(@"%@", listOptions);
+    int i;
+    scanf("%d", &i);
+    if (i == 1) {
+        //print all items in list
+    }
+    if (i == 2) {
+        //add new item
+    }
+    if (i ==3) {
+        //rename item
+    }
+    if (i == 4) {
+        //delete item
+    }
+    if (i == 5) {
+        //mark task done
+    }
+    if (i == 6) {
+        //list all 'not marked done' items
+    }
+    if (i == 7) {
+        //print all items in list, versions: either excluding marked done items, or print all incl marked done items with a check sign
+    }
+    if (i == 0) {
+        NSLog(@"It was good to see you! Bye!");
+    }
+    else {
+        NSLog(@"Bummer! Try again?");
+    }
+}
+
 //-(void) editItemName {
 // first version of this code - doesn't work
 //    NSLog(@"Enter task description");
@@ -83,5 +117,6 @@
 //        }
 //    }
 //}
+
 @end
 

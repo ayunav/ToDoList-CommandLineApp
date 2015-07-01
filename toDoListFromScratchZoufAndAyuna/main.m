@@ -78,10 +78,9 @@ int main(int argc, const char * argv[]) {
         //print options menu for list options menu
         [allLists listManagerMenuOptions];
         
+        [groceryList listOptions]; 
         
-//        NSArray *homeMenuListOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks\n", @"2 - Add new task\n", @"3 - Delete task\n", @"4 - Mark task done\n", @"5 - Edit task\n", @"6 - List all active tasks\n", @"7 - List completed tasks\n", @"0 - Quit",  nil];
-//        NSLog(@"%@", homeMenuListOptions);
-
+        
         
         
 //        NSLog(@"Would you like to create a to-do list? Enter:\n 1 = Yes\n 2 = NO");

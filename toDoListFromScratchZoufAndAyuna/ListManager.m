@@ -51,8 +51,8 @@
 }
 
 -(void) listManagerMenuOptions {
-    NSArray *homeMenuListManagerOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"0 - Quit", @"Enter a number to pick your option:", nil];
-    NSLog(@"%@", homeMenuListManagerOptions);
+    NSArray *listManagerMenuOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"0 - Quit", @"Enter a number to pick your option:", nil];
+    NSLog(@"%@", listManagerMenuOptions);
     int i;
     scanf("%d", &i);
     if (i == 1) {
