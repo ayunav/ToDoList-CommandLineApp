@@ -83,18 +83,6 @@ int main(int argc, const char * argv[]) {
         
         
         
-//        NSLog(@"Would you like to create a to-do list? Enter:\n 1 = Yes\n 2 = NO");
-//        int i;
-//        scanf("%d", &i);
-//        if (i == 2) {
-//            return NO;
-//        }
-//        if (i == 1) {
-//            NSLog(@"Enter a name for your to-do list:");
-//            }
-//        else {
-//            NSLog(@"Sorry, this input is incorrect. Please enter:\n 1 = Yes\n 2 = NO");
-//        }
         
         
         

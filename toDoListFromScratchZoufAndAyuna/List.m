@@ -30,7 +30,7 @@
     [_itemsInList addObject:task];
 }
 -(void) deleteItemFromList: (Item*) task {
-    NSLog(@"Enter an item number to delete it");
+    NSLog(@"Enter a number to delete task");
     int j;
     scanf("%d", &j);
     for (int i = 0; i < [_itemsInList count]; i++) {
@@ -49,7 +49,7 @@
 }
 
 -(void) markItemDone: (Item *) task {
-    NSLog(@"What item do you want to mark as completed?");
+    NSLog(@"Enter a number to mark task done");
     int j;
     scanf("%d", &j);
     for (int i = 0; i < [_itemsInList count]; i++) {
@@ -60,6 +60,29 @@
         }
     }
 }
+
+//-(void) editItemName {
+// first version of this code - doesn't work
+//    NSLog(@"Enter task description");
+//    char newItemName[256];
+//    fgets(newItemName, 256, stdin);
+//    NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
+
+//2nd version:
+//    //if scanf user input = edit task {
+//    int j;
+//    scanf("%d", &j);
+//    for (int i = 0; i < [_itemsInList count]; i++) {
+//        if (j == i) {
+//            NSString *itemName = [[_itemsInList objectAtIndex:j-1] itemName];
+//            NSLog(@"Enter task description");
+//            char newItemName[256];
+//            fgets(newItemName, 256, stdin);
+//            NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
+//            itemName = editedItemName;
+//        }
+//    }
+//}
 
 -(void) listOptions {
     NSArray *listOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks", @"2 - Add new task", @"3 - Edit task", @"4 - Delete task", @"5 - Mark task done", @"6 - List all active tasks", @"7 - List completed tasks", @"0 - Quit",  nil];
@@ -95,28 +118,6 @@
     }
 }
 
-//-(void) editItemName {
-// first version of this code - doesn't work
-//    NSLog(@"Enter task description");
-//    char newItemName[256];
-//    fgets(newItemName, 256, stdin);
-//    NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
-
-//2nd version:
-//    //if scanf user input = edit task {
-//    int j;
-//    scanf("%d", &j);
-//    for (int i = 0; i < [_itemsInList count]; i++) {
-//        if (j == i) {
-//            NSString *itemName = [[_itemsInList objectAtIndex:j-1] itemName];
-//            NSLog(@"Enter task description");
-//            char newItemName[256];
-//            fgets(newItemName, 256, stdin);
-//            NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
-//            itemName = editedItemName;
-//        }
-//    }
-//}
 
 @end
 
