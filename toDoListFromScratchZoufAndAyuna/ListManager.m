@@ -49,5 +49,26 @@
     }
     NSLog(@"Enter a number to pick your to-do list");
 }
+
+-(void) listManagerMenuOptions {
+    NSArray *homeMenuListManagerOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"0 - Quit", @"Enter a number to pick your option:", nil];
+    NSLog(@"%@", homeMenuListManagerOptions);
+    int i;
+    scanf("%d", &i);
+    if (i == 1) {
+        //[_lists printLists];
+    }
+    // if add new to do list - don't know how to write the whole thing yet
+    // if delete list -> how pick a list at index? write it in the method in implementation
+    //        if (i == 3) {
+    //            [oneListSoFar deleteListFromListManager:<#(List *)#>];
+    //        }
+    if (i == 0) {
+        NSLog(@"It was good to see you! Bye!");
+    }
+    else {
+        NSLog(@"Bummer! Try again?");
+    }
+}
 @end
 

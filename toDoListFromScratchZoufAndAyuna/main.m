@@ -62,10 +62,10 @@ int main(int argc, const char * argv[]) {
         [homeworkToDoList addItemToList:readBook];
         //[homeworkToDoList printAllItemsInList];
         
-        ListManager *oneListSoFar = [[ListManager alloc]init];
-        [oneListSoFar getLists];
-        [oneListSoFar addListToListManager: groceryList];
-        [oneListSoFar addListToListManager:homeworkToDoList];
+        ListManager *allLists = [[ListManager alloc]init];
+        [allLists getLists];
+        [allLists addListToListManager: groceryList];
+        [allLists addListToListManager:homeworkToDoList];
         
         
         //[groceryList deleteItemFromList:firstTask];
@@ -76,22 +76,10 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"Welcome to your to-do list app! Let's get you started:\n");
         //print options menu for list options menu
-        NSArray *homeMenuListManagerOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"Enter a number to pick your option:", nil];
-        NSLog(@"%@", homeMenuListManagerOptions);
-        int i;
-        scanf("%d", &i);
-        if (i == 1) {
-            [oneListSoFar printLists];
-        }
-        // if add new to do list - don't know how to write the whole thing yet
-        // if delete list -> how pick a list at index? write it in the method in implementation
-//        if (i == 3) {
-//            [oneListSoFar deleteListFromListManager:<#(List *)#>];
-//        }
-//        
-
+        [allLists listManagerMenuOptions];
         
-//        NSArray *homeMenuListOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks\n", @"2 - Add new task\n", @"3 - Delete task\n", @"4 - Mark task done\n", @"5 - Edit task\n", @"6 - List all active tasks\n", @"7 - List completed tasks\n", nil];
+        
+//        NSArray *homeMenuListOptions = [[NSArray alloc] initWithObjects:@"1 - Display all tasks\n", @"2 - Add new task\n", @"3 - Delete task\n", @"4 - Mark task done\n", @"5 - Edit task\n", @"6 - List all active tasks\n", @"7 - List completed tasks\n", @"0 - Quit",  nil];
 //        NSLog(@"%@", homeMenuListOptions);
 
         
