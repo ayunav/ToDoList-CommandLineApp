@@ -16,17 +16,11 @@
 @class Item;
 
 //************************************** INTERFACE ITEM ********
-
 //************************************** IMPLEM ITEM ********
-
 //************************************** INTERFACE LIST ********
-
 //************************************** IMPLEM LIST ********
-
 //************************ INTERFACE LIST MANAGER ********
-
 //************************************** IMPLEM LIST MANAGER ********
-
 // ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
 
 int main(int argc, const char * argv[]) {
@@ -84,13 +78,12 @@ int main(int argc, const char * argv[]) {
         //print options menu for list options menu
         NSArray *homeMenuListManagerOptions = [[NSArray alloc] initWithObjects:@"1 - Display all to-do lists", @"2 - Add new to-do list", @"3 - Delete a to-do list", @"Enter a number to pick your option:", nil];
         NSLog(@"%@", homeMenuListManagerOptions);
-        int j;
-        scanf("%d", &j);
         int i;
+        scanf("%d", &i);
         if (i == 1) {
             [oneListSoFar printLists];
         }
-        // if add new to do list - don't know how to right the whole thing
+        // if add new to do list - don't know how to write the whole thing yet
         // if delete list -> how pick a list at index? write it in the method in implementation
 //        if (i == 3) {
 //            [oneListSoFar deleteListFromListManager:<#(List *)#>];
