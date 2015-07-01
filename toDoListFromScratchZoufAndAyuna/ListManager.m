@@ -22,7 +22,7 @@
 }
 
 -(void) addListToListManager: (List*) list {
-    NSLog(@"Enter a name for your new to-do list");
+    //NSLog(@"Enter a name for your new to-do list"); commenting it out for now, but it will be in the loop method later 
     //List *somethingList = [[List alloc] init];
     //[somethingList itemsInList]; - initializes items array in the new todo list
     [_lists addObject:list];
