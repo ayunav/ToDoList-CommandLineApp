@@ -77,7 +77,7 @@ int main(int argc, const char * argv[]) {
         //[groceryList deleteItemFromList:firstTask];
         //[groceryList printAllItemsInList];
         //[groceryList markItemDone:secondTask];
-        [groceryList printAllItemsInList];
+//        [groceryList printAllItemsInList];
 
         
         
