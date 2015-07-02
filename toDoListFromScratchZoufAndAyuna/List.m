@@ -44,7 +44,7 @@
     for (int i = 0; i < [_itemsInList count]; i++) {
         NSString *itemName = [[_itemsInList objectAtIndex:i] itemName];
         int itemPriority = [[_itemsInList objectAtIndex:i] itemPriority];
-        NSLog(@"%@, %d", itemName, itemPriority);
+        NSLog(@"%i %@, %d", i+1, itemName, itemPriority);
     }
 }
 
@@ -55,13 +55,15 @@
     for (int i = 0; i < [_itemsInList count]; i++) {
         if (i == j) {
             NSString *task = [[_itemsInList objectAtIndex:j-1] itemName];
-            NSString *printTaskAsCompleted = [NSString stringWithFormat:@"✔︎ %@", task];
+            NSString *printTaskAsCompleted = [NSString stringWithFormat:@"✔︎ %i %@", i, task];
             NSLog(@"%@", printTaskAsCompleted);
         }
     }
 }
 
-//-(void) editItemName {
+-(void) editItemName {
+    //print the list of items in this list 
+    NSLog(@"Enter a number to pick a task to edit"); 
 // first version of this code - doesn't work
 //    NSLog(@"Enter task description");
 //    char newItemName[256];
@@ -69,7 +71,7 @@
 //    NSString *editedItemName = [NSString stringWithUTF8String:newItemName];
 
 //2nd version:
-//    //if scanf user input = edit task {
+    //if scanf user input = edit task {
 //    int j;
 //    scanf("%d", &j);
 //    for (int i = 0; i < [_itemsInList count]; i++) {
@@ -82,7 +84,7 @@
 //            itemName = editedItemName;
 //        }
 //    }
-//}
+}
 
 -(void) addListDescription {
     NSLog(@"Enter list description: ");

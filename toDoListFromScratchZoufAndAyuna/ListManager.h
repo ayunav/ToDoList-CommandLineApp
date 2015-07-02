@@ -18,7 +18,7 @@
 @interface ListManager : NSObject
 -(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
--(void) deleteListFromListManager: (List*) list;
+-(void) deleteListFromListManager: (int) j;
 -(void) printLists;
 -(void) listManagerMenuOptions;
 @end

@@ -16,9 +16,9 @@
 @class Item;
 
 @interface List : NSObject
+-(void)setListName: (NSString *) listName;
 -(NSString *) listName;
 -(NSMutableArray *) itemsInList;
--(void)setListName: (NSString *) listName;
 -(void) addItemToList: (Item *) task;
 -(void) deleteItemFromList: (Item *) task;
 -(void) printAllItemsInList;
