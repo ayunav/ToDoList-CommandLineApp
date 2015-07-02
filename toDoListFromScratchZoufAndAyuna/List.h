@@ -20,7 +20,7 @@
 -(NSString *) listName;
 -(NSMutableArray *) itemsInList;
 -(void) addItemToList: (Item *) task;
--(void) deleteItemFromList: (Item *) task;
+-(void) deleteItemFromList;
 -(void) printAllItemsInList;
 -(void) markItemDone: (Item *) task;
 //-(void) editItemName;

@@ -12,6 +12,7 @@
     
     NSString* _itemName;
     int _itemPriority;
+    BOOL _markedDone;
 }
 
 -(void) setItem: (NSString *) item {
@@ -39,6 +40,13 @@
 
 -(int) itemPriority {
     return _itemPriority;
+}
+-(void) setMarkedDone:(BOOL)markedDone {
+    _markedDone = markedDone; 
+}
+
+-(BOOL) markedDone {
+    return _markedDone;
 }
 
 @end

@@ -21,5 +21,7 @@
 -(void) setItemPriority: (int) itemPriority; 
 -(NSString*) itemName;
 -(int) itemPriority;
+-(BOOL) markedDone;
+-(void) setMarkedDone:(BOOL)markedDone;
 
 @end
