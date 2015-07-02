@@ -153,7 +153,7 @@
             NSLog(@"Enter a task number to mark it completed");
             int i;
             scanf("%d", &i);
-            [self markItemDone];
+            //[self markItemDone];
         }
         if (i == 6) {
             [self printAllCompletedItems:NO];

@@ -35,7 +35,6 @@ int main(int argc, const char * argv[]) {
         
         List *groceryList = [[List alloc]init];
         [groceryList setListName:@"Grocery List"];
-        NSLog(@"%@", [groceryList listName]);
         [groceryList itemsInList];
         [groceryList addItemToList:firstTask];
         [groceryList addItemToList:secondTask];
