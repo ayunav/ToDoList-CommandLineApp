@@ -19,4 +19,4 @@ I asked my classmate to film a video of my first app demo, so I could share it w
 
 By the way, here's my keychain from Helsinki
 
-![keychain]()
+![keychain](https://github.com/ayunav/ToDoList-CommandLineApp/blob/master/keychain.jpg)
