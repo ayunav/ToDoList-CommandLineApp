@@ -16,10 +16,12 @@
 @class Item;
 
 @interface ListManager : NSObject
+
 -(NSMutableArray*) getLists;
 -(void) addListToListManager: (List*) list;
 -(void) renameList; 
 -(void) deleteListFromListManager: (int) j;
 -(void) printLists;
 -(void) listManagerMenuOptions;
+
 @end

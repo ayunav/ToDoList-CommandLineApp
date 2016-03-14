@@ -16,6 +16,7 @@
 @class Item;
 
 @interface List : NSObject
+
 -(void)setListName: (NSString *) listName;
 -(NSString *) listName;
 -(NSMutableArray *) itemsInList;
@@ -26,4 +27,5 @@
 //-(void) editItemName;
 -(void) listOptions;
 -(void) addListDescription;
+
 @end

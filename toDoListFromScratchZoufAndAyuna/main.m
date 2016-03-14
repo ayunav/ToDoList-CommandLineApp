@@ -15,13 +15,6 @@
 @class List;
 @class Item;
 
-//************************************** INTERFACE ITEM ********
-//************************************** IMPLEM ITEM ********
-//************************************** INTERFACE LIST ********
-//************************************** IMPLEM LIST ********
-//************************ INTERFACE LIST MANAGER ********
-//************************************** IMPLEM LIST MANAGER ********
-// ************ *********** ****** >>> MAIN FUNCTION <<< ********* ******** **********
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -70,28 +63,15 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Welcome to your to-do list app! Let's get you started:\n");
         [allLists listManagerMenuOptions]; //prints List Manager options menu
 
-        
-        
-        
-        //[groceryList deleteItemFromList:firstTask];
-        //[groceryList printAllItemsInList];
-        //[groceryList markItemDone:secondTask];
-//        [groceryList printAllItemsInList];
 
         
+//        [groceryList deleteItemFromList:firstTask];
+//        [groceryList printAllItemsInList];
+//        [groceryList markItemDone:secondTask];
+//        [groceryList printAllItemsInList];
+//        [groceryList listOptions];
+
         
-        
-        //[groceryList listOptions];
-        
-        
-        
-        
-        
-        
-        
-    
-    
-    
     }
     return 0;
 }

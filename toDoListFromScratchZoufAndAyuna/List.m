@@ -29,6 +29,7 @@
 -(void) addItemToList: (Item*) task {
     [_itemsInList addObject:task];
 }
+
 -(void) deleteItemFromList {
     NSLog(@"Enter a number to delete task");
     int j;

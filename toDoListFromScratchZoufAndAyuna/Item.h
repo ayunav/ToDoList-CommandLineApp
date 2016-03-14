@@ -16,6 +16,7 @@
 @class Item;
 
 @interface Item : NSObject
+
 -(void) setItem: (NSString *) item;
 -(void) addItemDescription;
 -(void) setItemPriority: (int) itemPriority; 

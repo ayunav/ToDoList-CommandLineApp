@@ -14,6 +14,7 @@
 @implementation ListManager {
     NSMutableArray *_lists;
 }
+
 - (NSMutableArray *) getLists {
     if (_lists == nil) {
         _lists = [[NSMutableArray alloc] init];
@@ -55,16 +56,12 @@
     fgets(newUserListName, 256, stdin);
     NSString *editedListName = [NSString stringWithUTF8String:newUserListName];
     [[_lists objectAtIndex:j-1] setListName:editedListName];
-
-    
-    
-    
-    
 }
 
 -(void) deleteListFromListManager: (int) j {
             [_lists removeObjectAtIndex:j-1];
 }
+
 -(void)printLists {
     for (int i = 0; i < [_lists count]; i++) {
         NSString *listName = [[_lists objectAtIndex:i] listName];
@@ -133,5 +130,6 @@
 //        
 //    }];
 //}
+
 @end
 
