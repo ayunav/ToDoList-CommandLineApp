@@ -32,17 +32,34 @@
 }
 
 -(void) renameList {
+//    [self printLists];
+//    NSLog(@"Enter a number to pick a list");
+//    int j;
+//    scanf("%d", &j);
+//    NSString *oldListName = [[_lists objectAtIndex:j-1] listName];
+//    NSLog(@"Enter list description");
+//    char newUserListName[256];
+//    fgets(newUserListName, 256, stdin);
+//    NSString *editedListName = [NSString stringWithUTF8String:newUserListName];
+//    oldListName = editedListName;
+//    [_lists replaceObjectAtIndex:j-1 withObject:editedListName];
+    
+    
     [self printLists];
     NSLog(@"Enter a number to pick a list");
     int j;
     scanf("%d", &j);
-    NSString *oldListName = [[_lists objectAtIndex:j-1] listName];
-    NSLog(@"Enter list description");
+    fpurge(stdin);
+    NSLog(@"Enter new list description");
     char newUserListName[256];
     fgets(newUserListName, 256, stdin);
     NSString *editedListName = [NSString stringWithUTF8String:newUserListName];
-    oldListName = editedListName;
-    [_lists replaceObjectAtIndex:j-1 withObject:editedListName];
+    [[_lists objectAtIndex:j-1] setListName:editedListName];
+
+    
+    
+    
+    
 }
 
 -(void) deleteListFromListManager: (int) j {
